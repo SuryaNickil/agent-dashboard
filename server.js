@@ -15,7 +15,7 @@ app.use(express.static('dist'));
 
 // Read performance data
 function getDashboardData() {
-  const resultsPath = '../agent_performance.jsonl';
+  const resultsPath = path.join(__dirname, 'agent_performance.jsonl');
   
   if (!fs.existsSync(resultsPath)) {
     return {
