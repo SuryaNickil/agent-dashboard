@@ -15,7 +15,8 @@ function App() {
 
   const fetchDashboard = async () => {
     try {
-      const response = await fetch('/api/dashboard');
+      const apiUrl = import.meta.env.VITE_API_URL || '/api';
+      const response = await fetch(`${apiUrl}/dashboard`);
       if (!response.ok) throw new Error('Failed to fetch dashboard');
       const json = await response.json();
       setData(json);

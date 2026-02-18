@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: agent-dashboard-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run server
+    envVars:
+      - key: PORT
+        value: 10000
+    staticSite:
+      buildCommand: npm run build
+      publishPath: dist
